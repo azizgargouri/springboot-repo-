@@ -3,16 +3,22 @@ package com.example.prosit_s3_spring.services;
 import com.example.prosit_s3_spring.entities.Universite;
 import com.example.prosit_s3_spring.repositories.ChambreRepository;
 import com.example.prosit_s3_spring.repositories.UniversiteRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @Service
+@AllArgsConstructor
+
 
 public class IUniversiteServicesImp  implements IUniversiteServices {
 
-    @Autowired
-    private UniversiteRepository UniversiteRepository;
+
+
+    private final UniversiteRepository UniversiteRepository;
 
 
     @Override

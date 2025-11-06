@@ -11,7 +11,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(value = "/bloc")
+@RequestMapping(value = "/foyer")
 public class FoyerController {
     private final IFoyerServices iFoyerServices;
 

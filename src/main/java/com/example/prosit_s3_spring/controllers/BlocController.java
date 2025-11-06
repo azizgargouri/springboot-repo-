@@ -39,7 +39,7 @@ private final IBlocServices iBlocServices;
         return iBlocServices.getBlocById(id);
     }
 
-    @GetMapping
+    @GetMapping("/getAllBloc")
     public List<Bloc> getAllBloc(){
         return iBlocServices.getllBloc();
     }

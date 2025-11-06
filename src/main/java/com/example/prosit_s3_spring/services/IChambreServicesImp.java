@@ -4,10 +4,7 @@ import com.example.prosit_s3_spring.entities.chambre;
 import com.example.prosit_s3_spring.repositories.ChambreRepository;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -46,4 +43,24 @@ private final ChambreRepository chambreRepository;
     public List<chambre> getllChambre() {
         return chambreRepository.findAll();
     }
+
+
+    @Override   //keywords
+    public List<chambre> findChambrebynomBloc(String nomBloc) {
+        return chambreRepository.findByBlocChambre_NomBloc(nomBloc);
+    }
+
+
+    @Override
+    public List<chambre> findByBlocChambreJPQL(String nomBloc) {
+        return chambreRepository.findByBlocChambreJPQL(nomBloc);
+    }
+
+    @Override
+    public List<chambre> findByBlocChambreNative(String nomBloc) {
+        return chambreRepository.findByBlocNameChambreNative(nomBloc);
+    }
+
+
+
 }

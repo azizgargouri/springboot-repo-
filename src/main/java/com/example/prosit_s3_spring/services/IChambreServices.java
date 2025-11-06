@@ -11,5 +11,10 @@ public interface IChambreServices {
     void deleteChambreById(long id);
     chambre getChambreById(long id);
     List<chambre> getllChambre();
+    List<chambre> findChambrebynomBloc(String nomBloc); //keywords
+    List<chambre> findByBlocChambreJPQL(String nomBloc); //JPQL
 
+
+
+    List<chambre> findByBlocChambreNative(String nomBloc);
 }

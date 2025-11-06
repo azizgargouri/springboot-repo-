@@ -1,6 +1,7 @@
 package com.example.prosit_s3_spring.entities;
 
 import com.example.prosit_s3_spring.entities.enums.TypeChambre;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -23,6 +24,7 @@ public class chambre {
 
 
     @ManyToOne
+            @JsonIgnore
     Bloc blocChambre;
 
 

@@ -30,6 +30,7 @@ public class ChambreController {
         return iChambreServices.updateChambre(chambre);
     }
 
+
     @DeleteMapping ("/delete/{id}")
     public void  deleteChambre(@PathVariable Long id){
 
@@ -41,10 +42,28 @@ public class ChambreController {
         return iChambreServices.getChambreById(id);
     }
 
-    @GetMapping
+    @GetMapping("/getAllChambre")
     public List<chambre> getAllChambre(){
         return iChambreServices.getllChambre();
     }
+
+
+    @GetMapping("/getchambrebyblocname/{nomBloc}") //keywords
+    public List<chambre> getAllChambreByNomBloc(@PathVariable String nomBloc){
+        return iChambreServices.findChambrebynomBloc(nomBloc);
+    }
+
+
+    @GetMapping("/getchambrebyblocnamejpql/{nomBloc}")  //jpql
+   public  List<chambre> getAllChambreByNomBlocJPQL(@PathVariable String nomBloc){
+        return iChambreServices.findByBlocChambreJPQL(nomBloc);
+    }
+
+    @GetMapping("/getchambrebyblocnameNative/{nomBloc}")
+    public  List<chambre> findByBlocNameChambreNative(@PathVariable String nomBloc){
+        return iChambreServices.findByBlocChambreNative(nomBloc);
+    }
+
 
 
 
